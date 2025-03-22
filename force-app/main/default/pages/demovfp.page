@@ -1,0 +1,9 @@
+<apex:page controller="DemoController">
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!indexes}" var="index">
+            <apex:column headerValue="First Name" value="{!firstName[index]}" />
+            <apex:column headerValue="Last Name" value="{!lastName[index]}" />
+            <apex:column headerValue="City" value="{!cityName[index]}" />
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

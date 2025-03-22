@@ -1,0 +1,143 @@
+<aura:component implements="flexipage:availableForAllPageTypes,lightning:isUrlAddressable" access="global" controller="TestPocLightning">
+
+    <aura:attribute name="ListContact" type="List" />
+    <aura:attribute name="ListContactLimit" type="List" />
+    <aura:attribute name="pageSize" type="Integer" default="3" />
+    <aura:attribute name="NumberOfRecord" type="Integer" />
+ 
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <lightning:navigation aura:id="navigate" />
+
+    <div class="container forceRelatedListSingleContainer" data-aura-rendered-by="14:2027;a" data-aura-class="forceRelatedListSingleContainer">
+        <article class="slds-card slds-card_boundary forceRelatedListCardDesktop" aria-describedby="header_4360:0"
+            data-aura-rendered-by="4366:0" data-aura-class="forceRelatedListCardDesktop">
+            <div class="slds-card__header slds-grid" data-aura-rendered-by="4367:0">
+                <header class="slds-media slds-media--center slds-has-flexi-truncate" data-aura-rendered-by="4368:0">
+                    <div class="slds-media__figure" data-aura-rendered-by="4369:0">
+                        <div class="extraSmall forceEntityIcon" style="background-color: #6a89e5" data-aura-rendered-by="5106:0"
+                            data-aura-class="forceEntityIcon"><span data-aura-rendered-by="5109:0" class="uiImage"
+                                data-aura-class="uiImage"><img data-aura-rendered-by="5107:0" src="https://asac-fapes--CI.cs83.my.salesforce.com/img/icon/t4v35/custom/custom7_120.png"
+                                    class="icon " alt="Documents GED" title="Documents GED" /></span></div>
+                    </div>
+                    <div class="slds-media__body" data-aura-rendered-by="4370:0">
+                        <h2 id="header_4360:0" data-aura-rendered-by="4371:0"><a class="slds-card__header-link baseCard__header-title-container"
+                                data-aura-rendered-by="4372:0" href="#" onclick="{!c.navigate}"><span class="slds-card__header-title slds-truncate slds-m-right--xx-small"
+                                    title="Documents GED" data-aura-rendered-by="4373:0">Documents GED Allianz</span><span
+                                    class="slds-card__header-title slds-shrink-none slds-m-right--xx-small" title="(1)"
+                                    data-aura-rendered-by="4376:0"> ({!v.NumberOfRecord})</span></a></h2>
+                    </div>
+                </header>
+
+           
+            </div>
+
+
+
+            <div class="slds-card__body" data-aura-rendered-by="4381:0">
+                <div class="" data-aura-rendered-by="4753:0">
+                    <div class="previewMode SMALL forceRelatedListPreview" data-aura-rendered-by="4756:0"
+                        data-aura-class="forceRelatedListPreview">
+                        <!--render facet: 4757:0-->
+                        <div class="" data-aura-rendered-by="4758:0">
+                            <div class="slds-hide" data-aura-rendered-by="4763:0">
+                                <div data-aura-rendered-by="4766:0" class="forcePlaceholder" data-aura-class="forcePlaceholder">
+                                    <div class="placeholder listpreview ">
+                                        <div class="body">
+                                            <div class="field ">
+                                                <div class="text text-primary text-medium text-thinner"></div>
+                                                <div class="text text-secondary text-short text-thinner"></div>
+                                            </div>
+                                            <div class="field ">
+                                                <div class="text text-primary text-medium text-thinner"></div>
+                                                <div class="text text-secondary text-short text-thinner"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <aura:iteration items="{!v.ListContactLimit}" var="contact">
+                                <ul class="uiAbstractList" data-aura-rendered-by="1:2767;a">
+                                    <section data-aura-rendered-by="5:2767;a">
+                                        <li class="slds-var-p-horizontal_medium slds-var-p-vertical_xx-small desktop forceImageRelatedListStencil forceRecordLayout"
+                                            data-aura-rendered-by="49:2767;a" data-aura-class="forceImageRelatedListStencil forceRecordLayout">
+                                          
+
+                                            <div class="listItemBody withActions" data-aura-rendered-by="57:2767;a">
+                                                <h3 class="primaryField" data-aura-rendered-by="59:2767;a"><span
+                                                        data-aura-rendered-by="12:2767;a"><a href="https://gedqualif.asac-fapes.fr:8443/viewer/viewer.dcw?ids=00000000000000001"
+                                                            target="_blank" data-aura-rendered-by="13:2767;a">{!contact.Name}</a>
+                                                        <!--render facet: 13:2767;a--></span></h3>
+                                                <ul class="itemRows truncate" data-aura-rendered-by="62:2767;a">
+                                                    <li class="tableRowGroup" data-aura-rendered-by="64:2767;a">
+                                                        <div class="slds-list--horizontal forceListRecordItem"
+                                                            data-aura-rendered-by="21:2767;a" data-aura-class="forceListRecordItem">
+                                                            <div class="slds-item--label slds-truncate recordCell"
+                                                                title="Confidentiel Médical:" data-aura-rendered-by="22:2767;a">Confidentiel
+                                                                Médical:</div>
+                                                            <div class="slds-item--detail slds-truncate recordCell"
+                                                                data-aura-rendered-by="24:2767;a"><span
+                                                                    data-aura-rendered-by="19:2767;a" class="uiImage uiOutputCheckbox"
+                                                                    data-aura-class="uiImage uiOutputCheckbox"><img
+                                                                        data-aura-rendered-by="17:2767;a" src="/auraFW/resources/aura/s.gif"
+                                                                        class=" checked" alt="True" /></span></div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="tableRowGroup" data-aura-rendered-by="66:2767;a">
+                                                        <div class="slds-list--horizontal forceListRecordItem"
+                                                            data-aura-rendered-by="33:2767;a" data-aura-class="forceListRecordItem">
+                                                            <div class="slds-item--label slds-truncate recordCell"
+                                                                title="Sens:" data-aura-rendered-by="34:2767;a">Sens:</div>
+                                                            <div class="slds-item--detail slds-truncate recordCell"
+                                                                data-aura-rendered-by="36:2767;a"><span
+                                                                    data-aura-rendered-by="29:2767;a" class="uiOutputTextArea"
+                                                                    data-aura-class="uiOutputTextArea">{!contact.FirstName}
+                                                                    <!--render facet: 31:2767;a--></span></div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="tableRowGroup" data-aura-rendered-by="68:2767;a">
+                                                        <div class="slds-list--horizontal forceListRecordItem"
+                                                            data-aura-rendered-by="43:2767;a" data-aura-class="forceListRecordItem">
+                                                            <div class="slds-item--label slds-truncate recordCell"
+                                                                title="Date de réception:" data-aura-rendered-by="44:2767;a">Date
+                                                                de réception:
+                                                            </div>
+
+                                                            <div class="slds-item--detail slds-truncate recordCell"
+                                                                data-aura-rendered-by="46:2767;a"><span
+                                                                    data-aura-rendered-by="41:2767;a" class="uiOutputDate"
+                                                                    data-aura-class="uiOutputDate">{!contact.LastName}</span>
+                                                            </div>
+
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                        </li>
+                                    </section>
+                                </ul>
+                            </aura:iteration>
+                            <div class="emptyContent hidden" data-aura-rendered-by="4768:0">
+                                <div class="emptyContentInner slds-text-align--center" data-aura-rendered-by="4769:0">
+                                    <!--render facet: 4770:0-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <aura:If isTrue="{!v.NumberOfRecord >= 1}">
+                <a data-aura-rendered-by="5098:0" href="#" onclick="{!c.navigate}">
+                    <div class="slds-card__footer" data-aura-rendered-by="5099:0"><span class="view-all-label"
+                            data-aura-rendered-by="5100:0">Afficher tout<span class="assistiveText"
+                                data-aura-rendered-by="5102:0">Documents
+                                GED</span></span>
+                    </div>
+                </a>
+            </aura:If>
+        </article>
+    </div>
+</aura:component>

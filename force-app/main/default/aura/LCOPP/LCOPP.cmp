@@ -1,0 +1,36 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global">
+    <!-- Global Style: use for footer -->
+    <aura:html tag="style">
+        .cuf-content { padding: 0 0rem !important; } .slds-p-around--medium { padding: 0rem !important; } .slds-modal__content{ /*overflow-y:hidden !important;*/ height:unset !important; max-height:unset !important; } div:not(.slds-modal_medium):not(.slds-modal_small):not(.slds-modal_x-small):not(.slds-modal_xx-small):not(.slds-modal_prompt)
+        > .slds-modal__container { max-width: 95rem; width:95%; }
+    </aura:html>
+
+
+    <!-- Attribute -->
+    <aura:attribute name="isConfirmed" type="Boolean" default="false" />
+    <aura:attribute name="RefDV" type="String" default="{!v.RefDV}" />
+    <aura:attribute name="affichage" type="String" />
+    <aura:attribute name="msg" type="Object" />
+
+    <lightning:overlayLibrary aura:id="overlayLib" />
+
+    <div class="slds-is-relative">
+        <!-- Content -->
+
+
+       <Lightning:recordEditForm ObjectApiName="Task">
+            <lightning:inputField fieldName="AccountId" value="{!v.RefDV}"></lightning:inputField>
+            </Lightning:recordEditForm>
+
+    
+        <!-- Footer -->
+        <footer class="slds-modal__footer">
+            <div aura:id="DivID">
+                <lightning:button label="Synchroniser" iconName="action:user_activation" />
+                <lightning:button label="Annuler"  iconName="action:remove" />
+            </div>
+
+        </footer>
+    </div>
+
+</aura:component>

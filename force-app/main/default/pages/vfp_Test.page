@@ -1,0 +1,6 @@
+<apex:page controller="testUs" docType="html-5.0" showHeader="false" sidebar="false" standardStylesheets="false">
+    <apex:form >
+    <apex:input type="text" value="{!test}" id="test"/>
+    <apex:commandButton action="{!testtest}"/>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,60 @@
+<aura:component implements="flexipage:availableForAllPageTypes,lightning:isUrlAddressable,force:appHostable" access="global"  controller="TestPocLightning">
+   
+    <aura:attribute name="ListContact" type="List" />
+    <lightning:workspaceAPI aura:id="workspace"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+     <div>
+                    <table class="slds-table slds-table_bordered slds-table_striped slds-table_cell-buffer slds-table_fixed-layout">
+                        <thead>
+                            <tr class="slds-text-heading_label">
+                                <th scope="col">
+                                    <div class="slds-truncate" title="view"></div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="FirstName">FirstName</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="LastName">LastName</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Name">Name</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Birthdate">Birthdate</div>
+                                </th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Use the Apex model and controller to fetch server side data -->
+                            <aura:iteration items="{!v.ListContact}" var="item">
+                                <tr>
+                                    <td>
+                                        <a href="#" data-id="{!item.Id}" data-name="{!item.Subject}" >Hello</a>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate" title="{!item.FirstName}">{!item.FirstName}</div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate" title="{!item.Status}">{!item.LastName}</div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate" title="{!item.Subject}">{!item.Name}</div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate" title="{!item.ActivityDate}">
+                                            <ui:outputDate value="{!item.Birthdate}" />
+                                        </div>
+                                    </td>
+
+                                </tr>
+                            </aura:iteration>
+                        </tbody>
+                    </table>
+                </div>
+    
+    
+    
+    
+</aura:component>

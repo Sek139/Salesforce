@@ -1,0 +1,14 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    
+    <lightning:notificationsLibrary aura:id="notifLib"/>
+    <div class="slds-theme_default">
+        <lightning:fileUpload title="Upload Files"
+                              name="fileuploader"
+                              label="Upload Files"
+                              recordId="{!v.recordId}"
+                              multiple="true"
+                              accept=".pdf,.png,.jpg"
+                              onuploadfinished="{!c.afterFinish}"/>
+    </div>
+    
+</aura:component>
