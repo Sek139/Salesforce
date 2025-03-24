@@ -7,30 +7,34 @@ import { loadScript, loadStyle } from 'lightning/platformResourceLoader';
 export default class ReactAppDynamic extends LightningElement {
     reactAppInitialized = false;
     renderedCallback() {
-        if (this.reactAppInitialized) return;
-    this.reactAppInitialized = true;
-    
-    // Create script element
-    const script = document.createElement('script');
-    script.src = REACT_APP + '/build/static/js/main.e75d7d85.js';
-    script.onload = () => {
-        console.log('Script loaded successfully');
-        const container = this.template.querySelector('.react-container');
-        if (window.initializeReactApp) {
-            window.initializeReactApp(container);
+        if (this.reactAppInitialized) {
+            return;
         }
-    };
-    script.onerror = (error) => {
-        console.error('Error loading script:', error);
-    };
-    
-    // Create style element
-    const style = document.createElement('link');
-    style.rel = 'stylesheet';
-    style.href = REACT_APP + '/build/static/css/main.7ed27391.css';
-    
-    // Append elements to document head
-    document.head.appendChild(script);
-    document.head.appendChild(style);
+        this.reactAppInitialized = true;
+        console.log('React app initialization started');
+        console.log('REACT_APP:', REACT_APP + '/build/static/js/main.e75d7d85.js');
+        console.log('REACT_APP:', REACT_APP + '/build/static/css/main.7ed27391.css');
+        Promise.all([
+            loadScript(this, REACT_APP + '/build/static/js/main.e75d7d85.js'),
+            loadStyle(this, REACT_APP + '/build/static/css/main.7ed27391.css')
+        ])
+        .then(() => {
+            
+            console.log('React app script and style loaded successfully');
+            
+                 // Get the container element
+                 const container = this.template.querySelector('.react-container');
+            
+                 // Call the global initialization function you've already created
+                 if (window.initializeReactApp) {
+                     window.initializeReactApp(container);
+                     console.log('React app successfully initialized');
+                 } else {
+                     console.error('window.initializeReactApp function not found');
+                 }
+        })
+        .catch(error => {
+            console.error('Error loading React app:', error);
+        });
     }
 }
